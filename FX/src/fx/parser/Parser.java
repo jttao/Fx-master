@@ -18,7 +18,7 @@ public class Parser {
 	void move() throws IOException{ look = lex.scan();}
 	
 	void error(String s) {
-		throw new Error("near line "+lex.line+": "+s);
+		throw new Error("near line "+Lexer.line+": "+s);
 	}
 	
 	void match(int t)throws IOException{
@@ -71,7 +71,7 @@ public class Parser {
 	}
 	
 	Stmt stmt() throws IOException{
-		Expr x; Stmt s,s1,s2;
+		Expr x; Stmt s1,s2;
 		Stmt savedStmt;
 		switch(look.tag){
 		case ';':

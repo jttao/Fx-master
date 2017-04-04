@@ -6,12 +6,12 @@ import fx.lexer.*;
 
 public class Env {
 	
-	private Hashtable table;
+	private Hashtable<Token,Id> table;
 	
 	protected Env prev;
 	
 	public Env(Env n){
-		table = new Hashtable(); prev = n;
+		table = new Hashtable<Token,Id>(); prev = n;
 	}
 	
 	public void put(Token w,Id i){
